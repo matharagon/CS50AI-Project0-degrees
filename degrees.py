@@ -70,7 +70,7 @@ def main():
         sys.exit("Person not found.")
 
     path = shortest_path(source, target)
-
+    
     if path is None:
         print("Not connected.")
     else:
@@ -114,29 +114,25 @@ def shortest_path(source, target):
         # Keep track of explored nodes
         num_explored += 1
 
-        # Add explored node to set 
-        explored.add(node.state)
-
         # Bringing neighbors tuples from person_id = node.state
         neighbors = neighbors_for_person(node.state)
-
-
-        # Adding child node to frontier
+        
+        explored.add(node.state)
+        
         for movie, actor in neighbors:
-            if not frontier.contains_state(actor) and actor not in explored:
-                child=Node(state=actor, parent=node, action=movie)  
-                # When chid node is goal we add the tuple (movie_id, person_id) to path list           
-                if child.state == target:
-                    path = []
-                    node = child 
-                    while node.parent is not None:
-                        path.append((movie,actor))
-                        node = node.parent
-                    path.reverse()
-                    return path
-
+            if actor == target:
+                path = []
+                path.append((movie,actor))
+                while node.parent is not None:
+                    path.append((node.action, node.state))
+                    node=node.parent
+                path.reverse()
+                return path
+            
+            elif actor not in explored and not frontier.contains_state(actor):
+                child = Node(state=actor, action=movie, parent=node)
                 frontier.add(child)
-
+            
 
 def person_id_for_name(name):
     """
