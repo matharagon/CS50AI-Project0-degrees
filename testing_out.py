@@ -11,3 +11,5 @@ df_people
 df_stars = pd.read_csv('large/stars.csv', sep=',')
 df_stars
 # %%
+
+# %%
