@@ -1,5 +1,6 @@
 import time
 from functools import wraps
+import multiprocessing
 
 class Node():
     def __init__(self, state, parent, action):
@@ -53,7 +54,7 @@ class DegreeSeeker():
                 neighbors.add((movie_id,person_id))
         return neighbors
     
-    def shortest_path(self,source, target, df):
+    def shortest_path(self,source, target, df, time_limit):
         self.source = source
         self.target = target
         self.df = df
@@ -67,13 +68,17 @@ class DegreeSeeker():
 
         # Create a set to future explored nodes
         explored = set()
-
+        start_time = time.time()
 
         # Keep looking until find path
         while True:
             if frontier.empty():
                 return 0
             
+            current_time = time.time()
+            if current_time - start_time > time_limit:
+                return -1
+
             # Get initial node => initial state
             node = frontier.remove()
             # Keep track of explored nodes
@@ -97,20 +102,3 @@ class DegreeSeeker():
                 elif actor not in explored and not frontier.contains_state(actor):
                     child = Node(state=actor, action=movie, parent=node)
                     frontier.add(child)
-
-
-class TimeLimited:
-    def __init__(self, function):
-        self.function = function
-
-    def __call__(self, *args, **kwargs):
-        start_time = time.time()
-        try:
-            result = self.function(*args, **kwargs)
-            return result
-        except Exception as e:
-            raise e
-        finally:
-            end_time = time.time()
-            if end_time - start_time > 10:
-                return 0
