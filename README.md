@@ -6,6 +6,6 @@ In this problem, we’re interested in finding the shortest path between any two
 
 We can frame this as a search problem: our states are people. Our actions are movies, which take us from one actor to another (it’s true that a movie could take us to multiple different actors, but that’s okay for this problem). Our initial state and goal state are defined by the two people we’re trying to connect. By using breadth-first search, we can find the shortest path from one actor to another.
 
-This repository contains the main files for the game which is degrees.py and the analysis - general_degrees.py. If you wish to check the notebook there is degrees_of_separation.ipynb also found in HTML version. 
+This repository contains the main files for the game which is **degrees.py** and the analysis - **general_degrees.py**. If you wish to check the notebook there is **degrees_of_separation.ipynb** also found in HTML version. 
 
-There is a scraping method built in imdb_scraping.py, plus all the methods used are in util.py. 
+There is a scraping method built in **imdb_scraping.py**, plus all the other methods used are in **util.py**. 
