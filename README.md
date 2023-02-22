@@ -1,11 +1,23 @@
-# CS50AI-Project0-degrees
-## Background 
-According to the Six Degrees of Kevin Bacon game, anyone in the Hollywood film industry can be connected to Kevin Bacon within six steps, where each step consists of finding a film that two actors both starred in.
+# CS50AI Project 0: Degrees - A Python Implementation of a Degrees of Separation Algorithm
+# This is a Python implementation of a degrees of separation algorithm as part of CS50AI Project 0. The algorithm uses the Breadth-First Search (BFS) algorithm to find the shortest path between two actors in a given database of movies and actors.
 
-In this problem, we’re interested in finding the shortest path between any two actors by choosing a sequence of movies that connects them. For example, the shortest path between Jennifer Lawrence and Tom Hanks is 2: Jennifer Lawrence is connected to Kevin Bacon by both starring in “X-Men: First Class,” and Kevin Bacon is connected to Tom Hanks by both starring in “Apollo 13.”
+## Installation
+To install the project, you need Python 3 and the packages listed in the requirements.txt file. You can install the required packages using the following command:
 
-We can frame this as a search problem: our states are people. Our actions are movies, which take us from one actor to another (it’s true that a movie could take us to multiple different actors, but that’s okay for this problem). Our initial state and goal state are defined by the two people we’re trying to connect. By using breadth-first search, we can find the shortest path from one actor to another.
+```pip install -r requirements.txt```
 
-This repository contains the main files for the game which is **degrees.py** and the analysis - **general_degrees.py**. If you wish to check the notebook there is **degrees_of_separation.ipynb** also found in HTML version. 
+## Usage
+To use the program, run the following command in the terminal:
 
-There is a scraping method built in **imdb_scraping.py**, plus all the other methods used are in **util.py**. 
+```python degrees.py degrees.py```
+
+The program will output the shortest path between the two actors, or "No path found" if no path exists.
+
+## Contributing
+
+Contributions to the project are welcome! If you find a bug or have a feature request, please submit an issue on the GitHub Issues page. If you want to contribute code, please fork the repository, create a new branch, make your changes, and submit a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+I hope this updated README.md file is helpful! Let me know if you have any further questions or need more assistance.
