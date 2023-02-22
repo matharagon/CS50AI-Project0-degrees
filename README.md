@@ -9,7 +9,7 @@ To install the project, you need Python 3 and the packages listed in the require
 ## Usage
 To use the program, run the following command in the terminal:
 
-```python degrees.py degrees.py```
+```python degrees.py```
 
 The program will output the shortest path between the two actors, or "No path found" if no path exists.
 
