@@ -1,5 +1,5 @@
 # CS50AI Project 0: Degrees - A Python Implementation of a Degrees of Separation Algorithm
-# This is a Python implementation of a degrees of separation algorithm as part of CS50AI Project 0. The algorithm uses the Breadth-First Search (BFS) algorithm to find the shortest path between two actors in a given database of movies and actors.
+## This is a Python implementation of a degrees of separation algorithm as part of CS50AI Project 0. The algorithm uses the Breadth-First Search (BFS) algorithm to find the shortest path between two actors in a given database of movies and actors.
 
 ## Installation
 To install the project, you need Python 3 and the packages listed in the requirements.txt file. You can install the required packages using the following command:
