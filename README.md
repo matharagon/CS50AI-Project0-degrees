@@ -16,8 +16,3 @@ The program will output the shortest path between the two actors, or "No path fo
 ## Contributing
 
 Contributions to the project are welcome! If you find a bug or have a feature request, please submit an issue on the GitHub Issues page. If you want to contribute code, please fork the repository, create a new branch, make your changes, and submit a pull request.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-I hope this updated README.md file is helpful! Let me know if you have any further questions or need more assistance.
